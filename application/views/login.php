@@ -1,11 +1,10 @@
-<body>
+<body style="">
     <!-- Body Inner -->
     <div class="body-inner" >
-        
-        <section id="page-content" style="background: url('<?php echo base_url() ?>assets/images/112.png')">
+        <section id="page-content" style="background: url('<?php echo base_url() ?>assets/images/112.png')" class="img-fluid" alt="Responsive image">
         <br>
         <br><br>
-        <br><br><br>
+        <br>
         
             <div class="container" >
                 <div class="row justify-content-center">

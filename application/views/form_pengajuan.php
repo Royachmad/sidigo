@@ -1,6 +1,7 @@
 <body >
     <!-- Body Inner -->
-    <div class="body-inner" style="background: url('<?php echo base_url() ?>assets/images/121.png')">
+
+    <div class="body-inner" >
         <!-- Header -->
         <header id="header" class="header-always-fixed">
             <div class="header-inner">
@@ -87,39 +88,47 @@
 
                         <table class="table">
                         <!--Wizard 7-->
-                        <table class="table_baru"> 
-                            <tr>
-                                <td class="col-lg-4 text-center table_baru">
-                                    <img src="<?php echo base_url() ?>assets/images/logosi.png">
-                                </td>
-                                <td class="col-lg-4 table_baru">
-                                    <h3 class="text-center"><b>IJIN PELAKSANAAN  KERJA</b></h3>
-                                </td>
-                                <td class="col-lg-4 table_baru">
-                                    <table class="tab">
+                        <table class="table table-bordered text-center" style="width:100%">
+                            <thead>
+                                <tr>
+                                <th style="width:28%; text-align:center;vertical-align:middle">
+                                <img src="<?php echo base_url() ?>assets/images/logosi.png"></th>
+
+                                <td style='text-align:center;vertical-align:middle'>
+                                <h4 class="text-center"><b>IJIN PELAKSANAAN  KERJA</b></h4></td>
+
+                                <td style="text-right">
+                                <!-- <img src="<?php echo base_url() ?>assets/images/nomor.png"> -->
+                                <table class="tab table table-bordered3 no-display" style='text-align:left;'>
                                         <tr>
-                                            <td>&nbsp No Dokumen</td>
-                                            <td> &nbsp:</td>
-                                            <td>&nbsp FK3-MR-08-01</td>
+                                            <td >&nbsp No Dokumen</td>
+                                            <td  > &nbsp:</td>
+                                            <td >&nbsp FK3-MR-08-01</td>
                                         </tr>
                                         <tr>
-                                            <td>&nbsp Revisi</td>
-                                            <td>&nbsp:</td>
-                                            <td> &nbsp 01</td>
+                                            <td >&nbsp Revisi</td>
+                                            <td >&nbsp:</td>
+                                            <td > &nbsp 01</td>
                                         </tr>
                                         <tr>
-                                            <td>&nbsp Tgl Berlaku</td>
-                                            <td>&nbsp:</td>
-                                            <td>&nbsp 03.07.2017</td>
+                                            <td >&nbsp Tgl Berlaku</td>
+                                            <td >&nbsp:</td>
+                                            <td >&nbsp 03.07.2017</td>
                                         </tr>
                                         <tr>
-                                            <td>&nbsp Halaman</td>
-                                            <td>&nbsp:</td>
+                                            <td >&nbsp Halaman</td>
+                                            <td >&nbsp:</td>
                                             <td>&nbsp 1 dari 1</td>
                                         </tr>
                                     </table>
+                                
                                 </td>
-                            </tr>
+                                
+                                
+                                </tr>
+                            
+                            </thead>
+
                         </table>
                           
                         <!--Pengajuan Pelaksana-->
@@ -234,89 +243,87 @@
                         <table class="col-lg-12 table_baru1">
                             <tr>
                                 <td>
-                                    <input id="defaultCheck1" name="instalasi_listrik" type="checkbox" value="instalasi_listrik"
+                                    &nbsp<input id="defaultCheck1" name="instalasi_listrik" type="checkbox" value="instalasi_listrik"
                                     <?php if($data) { if($data[0]->instalasi_listrik) echo 'checked'; }?>
                                     <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
-                                        <label class="form-check-label" for="defaultCheck1">
-                                        Instalasi Listrik
-                                        </label>
-
-                                        <?php if($data) { if($data[0]->instalasi_listrik) echo '<input type="hidden" value="1" name="instalasi_listrik">'; }?>
+                                    <label class="form-check-label" for="defaultCheck1">Maintenance Listrik</label>
+                                    <?php if($data) { if($data[0]->instalasi_listrik) echo '<input type="hidden" value="1" name="instalasi_listrik">'; }?>
                                 </td>
                                 <td>
-                                    <input  id="defaultCheck1" name="fogging" type="checkbox" value="fogging"
-                                    <?php if($data) { if($data[0]->fogging) echo 'checked'; }?>
+                                    &nbsp<input id="defaultCheck1" name="fire" type="checkbox" value="fire"
+                                    <?php if($data) { if($data[0]->fire) echo 'checked'; }?>
                                     <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
-                                        <label class="form-check-label" for="defaultCheck1">
-                                        Fogging
-                                        </label>
-                                        <?php if($data) { if($data[0]->fogging) echo '<input type="hidden" value="1" name="fogging">'; }?>
-                                    </td>
-                                <td ><input  id="defaultCheck1" name="perbaikan_kantor" type="checkbox"  value="perbaikan_kantor"
-                                <?php if($data) { if($data[0]->perbaikan_kantor) echo 'checked'; }?>
-                                <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?>>
-                                        <label class="form-check-label" for="defaultCheck1" >
-                                       Perbaikan Kantor
-                                        </label>
-                                        <?php if($data) { if($data[0]->perbaikan_kantor) echo '<input type="hidden" value="1" name="perbaikan_kantor">'; }?>
+                                    <label class="form-check-label" for="defaultCheck1">Maintenance Sistem Pemadam Kebakaran</label>
+                                    <?php if($data) { if($data[0]->fire) echo '<input type="hidden" value="1" name="fire">'; }?>
                                 </td>
-
-                                <td><input id="defaultCheck1" name="lainnya" type="checkbox" value="lainnya"
-                                <?php if($data) { if($data[0]->lainnya) echo 'checked'; }?>
-                                <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
-                                        <label class="form-check-label" for="defaultCheck1">
-                                        Lainnya
-                                        </label>
-
-                                        <?php if($data) { if($data[0]->lainnya) echo '<input type="hidden" value="1" name="lainnya">'; }?>
-                                    </td>
-                                </tr>
-                            <tr>
-                                <td>
-                                    <input value="" id="defaultCheck1" name="instalasi_jaringan" type="checkbox"  value="instalasi_jaringan"
-                                    <?php if($data) { if($data[0]->instalasi_jaringan) echo 'checked '; }?>
-                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
-                                    <label class="form-check-label" for="defaultCheck1">Instalasi Jaringan IT</label>
-                                    <?php if($data) { if($data[0]->instalasi_jaringan) echo '<input type="hidden" value="1" name="instalasi_jaringan">'; }?>
-                                </td>
-                                <td>
-                                    <input value="" id="defaultCheck1" name="sedot_wc" type="checkbox" value="sedot_wc" 
-                                    <?php if($data) { if($data[0]->sedot_wc) echo 'checked'; }?>
+                                <td >
+                                    &nbsp<input id="defaultCheck1" name="pengelasan" type="checkbox"  value="pengelasan"
+                                    <?php if($data) { if($data[0]->pengelasan) echo 'checked'; }?>
                                     <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?>>
-                                    <label class="form-check-label" for="defaultCheck1"> Sedot WC</label>
-                                    <?php if($data) { if($data[0]->instalasi_listrik) echo '<input type="hidden" value="1" name="sedot_wc">'; }?>
+                                    <label class="form-check-label" for="defaultCheck1" >Pengelasan</label>
+                                    <?php if($data) { if($data[0]->pengelasan) echo '<input type="hidden" value="1" name="pengelasan">'; }?>
                                 </td>
-                                <td rowspan="2">
-                                    <textarea class="form-control" name="detail_perbaikan" id="exampleFormControlTextarea1" rows="2" 
-                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
-                                    <?php if($data) echo $data[0]->detail_perbaikan; ?> 
-                                    </textarea>
-                                    <?php if($data) { if($data[0]->detail_perbaikan) echo '<input type="hidden" value="'.$data[0]->detail_perbaikan.'" name="detail_perbaikan">'; }?>
-                                </td>
-                                <td rowspan="2">
-                                    <textarea class="form-control" name="detail_lainnya" id="exampleFormControlTextarea1" rows="2" 
-                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> > 
-                                    <?php if($data) echo $data[0]->detail_lainnya; ?>
-                                    </textarea>
-                                    <?php if($data) { if($data[0]->detail_lainnya) echo '<input type="hidden" value="'.$data[0]->detail_lainnya.'" name="detail_lainnya">'; }?>
 
+                                <td>&nbsp<input id="defaultCheck1" name="limbah_b3" type="checkbox" value="limbah_b3"
+                                    <?php if($data) { if($data[0]->limbah_b3) echo 'checked'; }?>
+                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
+                                    <label class="form-check-label" for="defaultCheck1">Pengangkutan Limbah B3 </label>
+                                    <?php if($data) { if($data[0]->limbah_b3) echo '<input type="hidden" value="1" name="limbah_b3">'; }?>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input  name="pemasangan_service_ac" id="defaultCheck1" type="checkbox" value="pemasangan_service_ac"
+                                &nbsp<input id="defaultCheck1" name="instalasi_jaringan" type="checkbox"  value="instalasi_jaringan"
+                                    <?php if($data) { if($data[0]->instalasi_jaringan) echo 'checked '; }?>
+                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
+                                    <label class="form-check-label" for="defaultCheck1">Maintenance Jaringan Komputer</label>
+                                    <?php if($data) { if($data[0]->instalasi_jaringan) echo '<input type="hidden" value="1" name="instalasi_jaringan">'; }?>
+                                </td>
+                                <td>
+                                &nbsp<input id="defaultCheck1" name="tandon" type="checkbox" value="tandon" 
+                                    <?php if($data) { if($data[0]->tandon) echo 'checked'; }?>
+                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?>>
+                                    <label class="form-check-label" for="defaultCheck1"> Pembersihan Tandon</label>
+                                    <?php if($data) { if($data[0]->tandon) echo '<input type="hidden" value="1" name="tandon">'; }?>
+                                </td>
+                                <td>
+                                &nbsp<input id="defaultCheck1" name="kaca" type="checkbox" value="kaca" 
+                                    <?php if($data) { if($data[0]->kaca) echo 'checked'; }?>
+                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?>>
+                                    <label class="form-check-label" for="defaultCheck1"> Pembersihan Kaca Gedung</label>
+                                    <?php if($data) { if($data[0]->kaca) echo '<input type="hidden" value="1" name="kaca">'; }?>
+                                </td>
+                                <td>
+                                    &nbsp<input id="defaultCheck1" name="fogging" type="checkbox" value="fogging"
+                                    <?php if($data) { if($data[0]->fogging) echo 'checked'; }?>
+                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
+                                    <label class="form-check-label" for="defaultCheck1">Fogging </label>
+                                    <?php if($data) { if($data[0]->fogging) echo '<input type="hidden" value="1" name="fogging">'; }?>
+                                </td>
+
+                            </tr>
+                            <tr>
+                            <td>
+                                &nbsp<input id="defaultCheck1" name="jartel" type="checkbox"  value="jartel"
+                                    <?php if($data) { if($data[0]->jartel) echo 'checked '; }?>
+                                    <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
+                                    <label class="form-check-label" for="defaultCheck1">Maintenance Jaringan Telepon</label>
+                                    <?php if($data) { if($data[0]->jartel) echo '<input type="hidden" value="1" name="jartel">'; }?>
+                                </td>
+                                <td>
+                                &nbsp<input  name="pemasangan_service_ac" id="defaultCheck1" type="checkbox" value="pemasangan_service_ac"
                                     <?php if($data) { if($data[0]->pemasangan_service_ac) echo 'checked'; }?>
                                     <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?>>
                                     <label class="form-check-label" for="defaultCheck1">Pemasangan/Service AC</label>
-                                    <?php if($data) { if($data[0]->lainnya) echo '<input type="hidden" value="1" name="pemasangan_service_ac">'; }?>
+                                    <?php if($data) { if($data[0]->pemasangan_service_ac) echo '<input type="hidden" value="1" name="pemasangan_service_ac">'; }?>
 
                                 </td>
                                 <td>
-                                    <input id="defaultCheck1" name="pengecatan_kantor" type="checkbox" value="pengecatan_kantor"
+                                &nbsp<input id="defaultCheck1" name="pengecatan_kantor" type="checkbox" value="pengecatan_kantor"
                                     <?php if($data) { if($data[0]->pengecatan_kantor) echo 'checked'; }?>
                                     <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >
                                     <label class="form-check-label" for="defaultCheck1">Pengecatan Kantor</label>
-                                    <?php if($data) { if($data[0]->lainnya) echo '<input type="hidden" value="1" name="pengecatan_kantor">'; }?>
+                                    <?php if($data) { if($data[0]->pengecatan_kantor) echo '<input type="hidden" value="1" name="pengecatan_kantor">'; }?>
 
                                 </td>
                             </tr>
@@ -328,23 +335,21 @@
                         <table class="col-lg-12 table_baru1">
                             <tr>
                                 <td>
-                                    <input id="defaultCheck1" name="uu" type="checkbox" value="uu"
+                                &nbsp<input id="defaultCheck1" name="uu" type="checkbox" value="uu"
                                     <?php if($data) { if($data[0]->uu) echo 'checked '; }?>
                                     <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
                                         <label class="form-check-label" for="defaultCheck1">
                                         UU. No. 1 Th. 1970
                                         </label>
                                         <?php if($data) { if($data[0]->uu) echo '<input type="hidden" value="1" name="uu">'; }?>
-
-
                                 </td>
                                 <td>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <input class="form-check-input" name="pelaporan" id="exampleCheck1" type="checkbox" value="pelaporan" 
+                                        <input class="form-check-input" name="pelaporan" id="defaultCheck1" type="checkbox" value="pelaporan" 
                                             <?php if($data) { if($data[0]->pelaporan) echo 'checked'; }?>
                                             <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
-                                            <label class="form-check-label" for="exampleCheck1">Pelaporan & penyelidikan Kecelakaan</label>  
+                                            <label class="form-check-label" for="defaultCheck1">Pelaporan & penyelidikan Kecelakaan</label>  
                                             <?php if($data) { if($data[0]->pelaporan) echo '<input type="hidden" value="1" name="pelaporan">'; }?>
         
                                         </div>
@@ -353,7 +358,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input id="defaultCheck1" name="peraturan_umum_k3" type="checkbox" value="peraturan_umum_k3" 
+                                &nbsp<input id="defaultCheck1" name="peraturan_umum_k3" type="checkbox" value="peraturan_umum_k3" 
                                     <?php if($data) { if($data[0]->peraturan_umum_k3) echo 'checked'; }?>
                                     <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
                                         <label class="form-check-label" for="defaultCheck1">
@@ -365,10 +370,10 @@
                                 <td>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <input class="form-check-input" name="p3k" id="exampleCheck1" type="checkbox" value="p3k"
+                                        <input class="form-check-input" name="p3k" id="defaultCheck1" type="checkbox" value="p3k"
                                             <?php if($data) { if($data[0]->p3k) echo 'checked '; }?>
                                             <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
-                                            <label class="form-check-label" for="exampleCheck1">P3K</label>
+                                            <label class="form-check-label" for="defaultCheck1">P3K</label>
                                             <?php if($data) { if($data[0]->p3k) echo '<input type="hidden" value="1" name="p3k">'; }?>
 
                                         </div>
@@ -377,7 +382,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                <input id="defaultCheck1" name="surat_izin" type="checkbox" value="surat_izin" 
+                                &nbsp<input id="defaultCheck1" name="surat_izin" type="checkbox" value="surat_izin" 
                                 <?php if($data) { if($data[0]->surat_izin) echo 'checked'; }?>
                                 <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
                                 <label class="form-check-label" for="defaultCheck1">Surat Izin Kerja Berbahaya</label>
@@ -387,7 +392,7 @@
                                 <td>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <input class="form-check-input" name="peraturan1" id="exampleCheck1" type="checkbox" value="peraturan1"
+                                        <input class="form-check-input" name="peraturan1" id="exampleCheck1" type="checkbox" value="peraturan1"
                                             <?php if($data) { if($data[0]->peraturan1) echo 'checked '; }?>
                                             <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
                                             <?php if($data) { if($data[0]->peraturan1) echo '<input type="hidden" value="1" name="peraturan1">'; }?>
@@ -401,7 +406,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                <input  id="defaultCheck1" name="syarat_kerja" type="checkbox" value="syarat_kerja"
+                                &nbsp<input  id="defaultCheck1" name="syarat_kerja" type="checkbox" value="syarat_kerja"
                                 <?php if($data) { if($data[0]->syarat_kerja) echo 'checked'; }?>
                                 <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
                                         <label class="form-check-label" for="defaultCheck1">
@@ -413,7 +418,7 @@
                                 <td>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <input class="form-check-input" name="peraturan2" id="exampleCheck1" type="checkbox" value="peraturan2"
+                                        <input class="form-check-input" name="peraturan2" id="exampleCheck1" type="checkbox" value="peraturan2"
                                             <?php if($data) { if($data[0]->peraturan2) echo 'checked'; }?>
                                             <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
                                             <?php if($data) { if($data[0]->peraturan2) echo '<input type="hidden" value="1" name="peraturan2">'; }?>
@@ -427,7 +432,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                <input  id="defaultCheck1" name="claim" type="checkbox" value="claim"
+                                &nbsp<input  id="defaultCheck1" name="claim" type="checkbox" value="claim"
                                 <?php if($data) { if($data[0]->claim) echo 'checked '; }?>
                                 <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
                                         <label class="form-check-label" for="defaultCheck1">
@@ -439,7 +444,7 @@
                                 <td>
                                 <div class="form-row">
                                         <div class="form-group">
-                                            <input class="form-check-input" name="peraturan3" id="exampleCheck1" type="checkbox" value="peraturan3" 
+                                        <input class="form-check-input" name="peraturan3" id="exampleCheck1" type="checkbox" value="peraturan3" 
                                             <?php if($data) { if($data[0]->peraturan3) echo 'checked'; }?>
                                             <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>>
                                             <?php if($data) { if($data[0]->peraturan3) echo '<input type="hidden" value="1" name="peraturan3">'; }?>
@@ -453,22 +458,23 @@
                             </tr>
                         </table>
                     <!--Tanda Tangan-->
-                        <table class="col-lg-12 table_baru1">
+                        <table class="table_baru1" style="width:100%;">
                             <tr class="text-center">
-                                <td>
-                                    <label class="form-check-label" for="defaultCheck1">Disetujui oleh</label>
-                                </td>
-                                <td> 
+                                    <td class="text-center">
+                                        <label class="form-check-label" for="defaultCheck1">Disetujui oleh</label>
+                                    </td>
+                                    <td class="text-center">
                                     <label class="form-check-label text-center" for="defaultCheck1">Rekanan</label>
-                                </td>
-                                <td> 
+                                    </td>
+                                    <td class="text-center">
                                     <label class="form-check-label text-center" for="defaultCheck1">Pengawasan oleh</label>
                                 </td>
-                                <td> 
+                                    <td class="text-center">
                                     <label class="form-check-label text-center" for="defaultCheck1">Pelaksana</label>
                                 </td>
+                                </div>
                             </tr>
-                            <tr height="100px" class="text-center">
+                            <tr height="30px" class="text-center">
                                 <td> 
                                 <?php if($ttd_kabag) {?>
                                     <img src="<?php echo base_url().'assets/img/ttd/'.$data[0]->ttd_kabag ?>" class="img-fluid img-thumbnail" alt="" style="max-height :120px">
@@ -477,7 +483,7 @@
                                     <!-- <button type="submit" name="tombol" value="tolak" class="btn btn-danger btn-sm" <?php if(($level!='3')||($stat!='pelaksana')) echo 'disabled=""';?> >Tolak</button> -->
                                     <?php }?>
                                 </td>
-                                <td>
+                                <td >
                                 <?php if($ttd_rekan) {?>
                                     <img src="<?php echo base_url().'assets/img/ttd/'.$data[0]->ttd_rekan ?>" class="img-fluid img-thumbnail" alt="" style="max-height :120px">
                                     <?php } else {?>
@@ -485,7 +491,7 @@
                                     <!-- <button type="button" class="btn btn-danger btn-sm" <?php if(($level!='1')||($stat!=null)) echo 'disabled=""';?> >Tolak</button> -->
                                     <?php }?>
                                 </td>
-                                <td>
+                                <td >
                                 <?php if($ttd_pengawas_k3) {?>
                                     <img src="<?php echo base_url().'assets/img/ttd/'.$data[0]->ttd_pengawas_k3 ?>" class="img-fluid img-thumbnail" alt="" style="max-height :120px">
                                     <?php } else {?>
@@ -493,7 +499,7 @@
                                     <!-- <button type="button" class="btn btn-danger btn-sm" <?php if(($level!='2')||($stat!='kabag')) echo 'disabled';?> >Tolak</button> -->
                                     <?php }?>
                                 </td>
-                                <td>
+                                <td >
                                     <?php if($ttd_pelaksana) {?>
                                     <img src="<?php echo base_url().'assets/img/ttd/'.$data[0]->ttd_pelaksana ?>" class="img-fluid img-thumbnail" alt="" style="max-height :120px">
                                     <?php } else {?>
@@ -504,45 +510,53 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <p><center> <?php if($data) echo $data[0]->tgl_acc_kabag; ?> <br>
+                                <td >
+                                    <p class="text-center"> <?php if($data) echo $data[0]->tgl_acc_kabag; ?> <br>
                                     <?php if($data) echo $data[0]->nama_kabag; ?>
-                                    </center> </p>
+                                    </p>
                                     
                                 </td>
                                 <td>
-                                    <p><center> <?php if($data) echo $data[0]->tgl_acc_rekan ;?> <br>
+                                    <p class="text-center"> <?php if($data) echo $data[0]->tgl_acc_rekan ;?> <br>
                                     <?php if($data) echo $data[0]->nama_rekan; ?>
-                                    </center></p>
-                                </td>
+                                    </p>
+                                </td >
 
-                                <td>
-                                    <p><center> <?php if($data) echo $data[0]->tgl_acc_pengawas_k3 ;?> <br> 
+                                <td >
+                                    <p class="text-center"> <?php if($data) echo $data[0]->tgl_acc_pengawas_k3 ;?> <br> 
                                     <?php if($data) echo $data[0]->nama_pengawas; ?>
-                                    </center></p>
+                                    </p>
                                 </td>
 
-                                <td>
-                                    <p><center> <?php if($data) echo $data[0]->tgl_pengajuan ;?> <br>
+                                <td >
+                                    <p class="text-center"> <?php if($data) echo $data[0]->tgl_pengajuan ;?> <br>
                                     <?php if($data) echo $data[0]->nama_pelaksana; ?>
-                                    </center></p>
+                                    </p>
                                 </td>
 
 
                             </tr>
                             <tr >
-                                <td>
-                                    <hr />
-                                </td>
+                                <td><hr /></td>
                                 <td><hr /></td>
                                 <td><hr /></td>
                                 <td><hr /></td>
                             </tr>
-                            <tr class="text-center">
-                                <td class="col-md-3"><h5>Kabag/ Wakabag/ Pimpro<h5></td>
-                                <td class="col-md-3"><h5>Pimpinan Rekanan <br>(Jika dikerjakan Rekanan) </h5> </td>
-                                <td class="col-md-3"><h5>Pengawas K3</h5</td>
-                                <td class="col-md-3"><h5>Fungsional/ Personil terkait</h5></td>
+                            <tr>
+                                <td class="text-center"><h5>Kabag/Wakabag/Pimpro</h5></td>
+                                <td class="text-center"><h5>Pimpinan Rekanan <br>(Jika dikerjakan Rekanan) </h5> </td>
+                                <td class="text-center"><h5>Pengawas K3</h5</td>
+                                <td class="text-center"><h5>Fungsional/ Personil terkait</h5></td>
+                            </tr>
+                        </table>
+                        <table class="col-lg-12 table_baru1">
+                            <tr>
+                                <td class="col-lg-4 table_baru"><h4>Rekomendasi Oleh Pengawas K3</h4>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="rekomendasi_pengawas_k3" rows="2"<?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>><?php if($data) echo $data[0]->rekomendasi_pengawas_k3;?></textarea>
+                                <?php if($data) { if($data[0]->rekomendasi_pengawas_k3) echo '<input type="hidden" value="'.$data[0]->rekomendasi_pengawas_k3.'" name="rekomendasi_pengawas_k3">'; }?>
+
+                            <br>
+                                </td>
                             </tr>
                         </table>
                     <!--Tanda Tangan MR-->
@@ -579,32 +593,16 @@
                                 </td>
                             </tr>
                             <tr class="text-center">
-                                <td class="col-md-3"><h5>Manager Reseacrh<h5></td>
+                                <td class="col-md-3"><h5>Manager Representative<h5></td>
                             </tr>
                         </table>
                     <!--Rekomendasi-->
-                        <table class="col-lg-12 table_baru1">
-                            <tr>
-                                <td class="col-lg-4 table_baru"><h4>Rekomendasi Oleh Pengawas K3</h4>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" name="rekomendasi_pengawas_k3" rows="2" 
-                                <?php if(($level!='2')||($stat!='kabag')) echo 'disabled=""';?>> 
-                                <?php if($data) echo $data[0]->rekomendasi_pengawas_k3; ?>
-                            </textarea>
-                            <?php if($data) { if($data[0]->rekomendasi_pengawas_k3) echo '<input type="hidden" value="'.$data[0]->rekomendasi_pengawas_k3.'" name="rekomendasi_pengawas_k3">'; }?>
-
-                            <br>
-                                </td>
-                            </tr>
-                        </table>
+                        
                         <table class="col-lg-12 table_baru1">
                             <tr>
                                 <td class="col-lg-4 table_baru"><h4>Rekomendasi Oleh MR</h4>
-                                <textarea class="form-control" name="rekomendasi_mr" 
-                                <?php if(($level!='6')||($stat!='pengawas')) echo 'disabled=""';?>>
-                                <?php if($data) echo $data[0]->rekomendasi_mr; ?>
-                            </textarea>
+                                <textarea class="form-control" name="rekomendasi_mr"<?php if(($level!='6')||($stat!='pengawas')) echo 'disabled=""';?>><?php if($data) echo $data[0]->rekomendasi_mr;?></textarea>
                             <?php if($data) { if($data[0]->rekomendasi_mr) echo '<input type="hidden" value="'.$data[0]->rekomendasi_mr.'" name="rekomendasi_mr">'; }?>
-                            <br>
                                 </td>
                             </tr>
                         </table>
@@ -612,10 +610,7 @@
                         <table class="col-lg-12 table_baru1">
                             <tr>
                                 <td class="col-lg-4 table_baru"><h4>Catatan pelaksanaan pekerjaan (Satpam)</h4>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" name="catatan"
-                                <?php if(($level!='4')||($stat!='mr')) echo 'disabled=""';?>>
-                                <?php if($data) echo $data[0]->catatan; ?>
-                            </textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="catatan"<?php if(($level!='4')||($stat!='mr')) echo 'disabled=""';?>><?php if($data) echo $data[0]->catatan;?></textarea>
                             <?php if($data) { if($data[0]->catatan) echo '<input type="hidden" value="'.$data[0]->catatan.'" name="catatan">'; }?>
                             <br>
                             <?php if($data) { if(!$data[0]->catatan){?>
@@ -628,9 +623,11 @@
                         <br>
                         <div class="col-lg-12 text-center">
 
-                            <a href="<?php if($data) echo base_url().'index.php/Pengajuan/cetak_form?id='.$data[0]->id_pengajuan; ?>" target="_blank" class="btn btn-outline"><i class="fa fa-print"></i> Cetak</a>
+                            <?php if($data){ if($data[0]->status=='rekan'){?>
+                            <a href="<?php if($data) echo base_url().'index.php/Pengajuan/cetak_form?id='.$data[0]->id_pengajuan; ?>" target="_blank" class="btn btn-outline"><i class="fa fa-download"></i> Unduh</a>
+                            <?php } }?>
                             <a href="<?php echo site_url() ?>Pengajuan/pengajuan"><button type="button" class="btn btn-light">Kembali</button></a>
-                            <a href="<?php if($data) echo base_url().'index.php/Pengajuan/tes_excel'; ?>" target="_blank" class="btn btn-outline"><i class="fa fa-print"></i> ujicoba</a>
+                            <!-- <a href="<?php if($data) echo base_url().'index.php/Pengajuan/tes_excel'; ?>" target="_blank" class="btn btn-outline"><i class="fa fa-print"></i> ujicoba</a> -->
                            </div>
 
                        

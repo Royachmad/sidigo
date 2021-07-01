@@ -33,6 +33,16 @@ class M_pengajuan extends CI_Model {
 		return $query;
 	}
 
+	function tampil_data_id($id){
+		$this->db->select('*');
+   		$this->db->from('tb_pengajuan');
+   		$this->db->where('id_pengajuan',$id);
+   		$query = $this->db->get();
+
+	return $query;	
+
+	}
+
 	function ambil_nama($id){
 		$this->db->select('nama');
 		$this->db->from('tb_user');

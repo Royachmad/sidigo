@@ -1,26 +1,51 @@
-<?php 
-
-class Pdf {
-
-    public function __construct()
-    {
-       include_once APPPATH.'/third_party/TCPDF-6.3.5/tcpdf.php';
-    }
- 
-    // function Pdf()
-    // {
-    //     $CI = & get_instance();
-    //     log_message('Debug', 'mPDF class is loaded.');
-    // }
- 
-    // function load($param=NULL)
-    // {
-    //     include_once APPPATH.'third_party\mpdf\mpdf\mpdf.php';
- 
-   
-    //         $param = "'','', 0, '', 0, 0, 0, 0, 0, 0";
-
-    //     return new mPDF($param);
-    // }
-}
-?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+/**
+ * CodeIgniter DomPDF Library
+ *
+ * Generate PDF's from HTML in CodeIgniter
+ *
+ * @packge        CodeIgniter
+ * @subpackage        Libraries
+ * @category        Libraries
+ * @author        Ardianta Pargo
+ * @license        MIT License
+ * @link        https://github.com/ardianta/codeigniter-dompdf
+ */
+use Dompdf\Dompdf;
+class Pdf extends Dompdf{
+    /**
+     * PDF filename
+     * @var String
+     */
+    public $filename;
+    public function __construct(){
+        parent::__construct();
+        $this->filename = "laporan.pdf";
+    }
+    /**
+     * Get an instance of CodeIgniter
+     *
+     * @access    protected
+     * @return    void
+     */
+    protected function ci()
+    {
+        return get_instance();
+    }
+    /**
+     * Load a CodeIgniter view into domPDF
+     *
+     * @access    public
+     * @param    string    $view The view to load
+     * @param    array    $data The view data
+     * @return    void
+     */
+    public function load_view($view, $data = array()){
+        $html = $this->ci()->load->view($view, $data, TRUE);
+        $this->load_html($html);
+        // Render the PDF
+        $this->render();
+            // Output the generated PDF to Browser
+               $this->stream($this->filename, array("Attachment" => false));
+    }
+}

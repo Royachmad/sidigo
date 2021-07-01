@@ -6,6 +6,7 @@ class Login extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('M_login');
+    $this->load->model('M_admin');
     $this->load->model('M_pengajuan');
     $this->load->helper('url');
   }
@@ -23,6 +24,7 @@ class Login extends CI_Controller {
       'akun' => $this->session->userdata('username'),
       'level' => $this->session->userdata('level'),
       'content' => 'login',
+      'cetak'=>'0',
       // 'footer' => 'layouts/footer',  
     ];
 //var_dump($data);
@@ -55,10 +57,17 @@ class Login extends CI_Controller {
           $level = $login[0]->level;
           $this->session->set_userdata('level', $level); //simpan session
 
-          redirect('index.php/Pengajuan/pengajuan');
+          if ($level == '7') {
+            redirect('index.php/Admin/data_user');
+            echo'admin';
           }
+          else{
+            redirect('index.php/Pengajuan/pengajuan');
+          }
+        }
     }
-  
+
+   
 
 
 

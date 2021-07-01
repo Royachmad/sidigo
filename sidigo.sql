@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14 Jun 2021 pada 16.35
+-- Generation Time: 01 Jul 2021 pada 04.07
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -45,12 +45,16 @@ CREATE TABLE `tb_pengajuan` (
   `jumlah_tenaga` varchar(50) DEFAULT NULL,
   `instalasi_listrik` varchar(20) DEFAULT NULL,
   `instalasi_jaringan` varchar(20) DEFAULT NULL,
+  `jartel` varchar(20) DEFAULT NULL,
+  `pengelasan` varchar(20) DEFAULT NULL,
+  `fire` varchar(20) DEFAULT NULL,
+  `tandon` varchar(20) DEFAULT NULL,
   `pemasangan_service_ac` varchar(20) DEFAULT NULL,
   `fogging` varchar(20) DEFAULT NULL,
-  `sedot_wc` varchar(20) DEFAULT NULL,
+  `kaca` varchar(20) DEFAULT NULL,
   `pengecatan_kantor` varchar(20) DEFAULT NULL,
   `perbaikan_kantor` varchar(20) DEFAULT NULL,
-  `lainnya` varchar(20) DEFAULT NULL,
+  `limbah_b3` varchar(20) DEFAULT NULL,
   `detail_perbaikan` varchar(100) DEFAULT NULL,
   `detail_lainnya` varchar(100) DEFAULT NULL,
   `uu` varchar(20) DEFAULT NULL,
@@ -87,14 +91,6 @@ CREATE TABLE `tb_pengajuan` (
   `nama_satpam` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tb_pengajuan`
---
-
-INSERT INTO `tb_pengajuan` (`id_pengajuan`, `id_user`, `tgl_pengajuan`, `nama_pekerjaan`, `nomor_pekerjaan`, `nama_pelaksana`, `pimpinan_rekanan`, `no_tlp_pimpinan`, `pengawas_rekanan`, `no_tlp_pengawas`, `lokasi_pekerjaan`, `lama_dari`, `lama_sampai`, `jam_kerja`, `pengawas_teknis`, `jumlah_tenaga`, `instalasi_listrik`, `instalasi_jaringan`, `pemasangan_service_ac`, `fogging`, `sedot_wc`, `pengecatan_kantor`, `perbaikan_kantor`, `lainnya`, `detail_perbaikan`, `detail_lainnya`, `uu`, `peraturan_umum_k3`, `surat_izin`, `syarat_kerja`, `claim`, `pelaporan`, `p3k`, `peraturan1`, `peraturan2`, `peraturan3`, `peraturan_1`, `peraturan_2`, `peraturan_3`, `ttd_pelaksana`, `ttd_kabag`, `ttd_rekan`, `ttd_pengawas_k3`, `ttd_mr`, `rekomendasi_pengawas_k3`, `rekomendasi_mr`, `catatan`, `tgl_catatan_satpam`, `status`, `tgl_acc_kabag`, `tgl_acc_rekan`, `tgl_acc_pengawas_k3`, `tgl_acc_mr`, `nama_rekan`, `nama_pengawas`, `nama_kabag`, `nama_mr`, `nama_satpam`) VALUES
-(27, 1, '2021-06-13 08:58:30', 'Service Ac', '1', 'Nuzul', 'Kartono', '0898323', 'Koko', '093283928', 'ruang operasional', '2021-06-13', '2021-06-16', '', 'OB', '8', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '                                     \r\n                                    ', ' \r\n                                                                        ', '1', '1', NULL, NULL, NULL, '1', '1', NULL, NULL, NULL, '', '', '', 'ttdku.jpg', 'ttdku.jpg', 'ttdku.jpg', 'ttdku.jpg', 'ttdku.jpg', ' -persiapan APD\r\n-melakukan pengecekan alat', '- okee', 'mantapp', '0000-00-00', 'rekan', '2021-06-13 08:58:58', '2021-06-13 09:29:34', '2021-06-13 09:00:05', '2021-06-13 09:25:43', 'nuzul', 'osy', 'yanti', 'hermen', 'bobi'),
-(28, 1, '2021-06-13 09:37:47', 'Pemasangan TPLink', '2', 'Nurul', 'Nurul', '0839289', 'Nurul', '823782738', 'ruang kabag', '2021-06-15', '2021-06-15', '8', 'OB', '6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '                                     \r\n                                    ', ' \r\n                                                                        ', NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, '', '', '', 'ttdku.jpg', 'ttdku.jpg', 'ttdku.jpg', 'ttdku.jpg', 'ttdku.jpg', ' \r\n                                                            ', 'oke', '                                      sudah oke                      ', '0000-00-00', 'rekan', '2021-06-13 09:38:13', '2021-06-13 09:42:20', '2021-06-13 09:38:36', '2021-06-13 09:41:20', 'nuzul', 'osy', 'yanti', 'hermen', 'bobi');
-
 -- --------------------------------------------------------
 
 --
@@ -116,11 +112,12 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `nama`, `email`, `username`, `password`, `foto_ttd`, `level`) VALUES
-(1, 'nuzul', 'nuzul@gmail.com', 'nuzul', 'nuzul123', 'ttdku.jpg', '1'),
-(2, 'osy', 'osy@gmail.com', 'osy', 'osy123', 'ttdku.jpg', '2'),
-(3, 'yanti', 'yanti@gmail.com', 'yanti', 'yanti123', 'ttdku.jpg', '3'),
-(4, 'bobi', 'bobi@gmail.com', 'bobi', 'bobi123', 'ttdku.jpg', '4'),
-(5, 'hermen', 'hermen@gmail.com', 'hermen', 'hermen123', 'ttdku.jpg', '6');
+(1, 'Nurul Abidin', 'nurul@gmail.com', 'nurul', 'Nurul123', 'nurul.png', '1'),
+(2, 'Ossy Anita Pratiwi', 'osy@gmail.com', 'ossy', 'Ossy123', 'ossy.png', '2'),
+(3, 'Heri Hermawan', 'heri@gmail.com', 'heri', 'Heri123', 'heri.png', '3'),
+(4, 'satpam', 'satpam@gmail.com', 'satpam', 'Satpam123', 'ttdku.jpg', '4'),
+(5, 'Hermen Eri Wibowo', 'hermen@gmail.com', 'hermen', 'Hermen123', 'hermen.png', '6'),
+(6, 'admin', 'admin@admin', 'admin', 'admin', '', '7');
 
 --
 -- Indexes for dumped tables
@@ -146,12 +143,12 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_pengajuan`
 --
 ALTER TABLE `tb_pengajuan`
-  MODIFY `id_pengajuan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_pengajuan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

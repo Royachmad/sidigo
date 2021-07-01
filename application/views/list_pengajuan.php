@@ -46,8 +46,8 @@
                 <div class="row mb-5">
                     <div class="col-lg-6">
                         <h4>List Data Pengajuan Form Pengajuan Ijin Pelaksanaan Kerja</h4>
-                        <p>*klik detail untuk melihat form</p>
-                        <p>*klik Buat Pengajuan untuk melakukan pengajuan</p>
+                        <p>*Klik lihat untuk melihat form</p>
+                        <!-- <p>*klik Buat Pengajuan untuk melakukan pengajuan</p> -->
                     </div>
                     <?php if($level=='1') {?>
                     <div class="col-lg-6 text-right">
